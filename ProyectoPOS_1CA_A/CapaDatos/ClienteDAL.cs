@@ -109,5 +109,35 @@ namespace ProyectoPOS_1CA_A.CapaDatos
             }
             return dt;
         }
+
+        // Este método sirve para llenar el ComboBox de clientes. 
+        public static List<Cliente2> ListarActivos()
+        {
+            List<Cliente2> lista = new List<Cliente2>();
+            using (SqlConnection con = new SqlConnection(Conexion.cadena))
+            {
+                string sql = "SELECT * FROM Cliente WHERE Estado = 1";
+                using (SqlCommand cmd = new SqlCommand(sql, con))
+                {
+                    con.Open();
+                    using (SqlDataReader dr = cmd.ExecuteReader())
+                    {
+                        while (dr.Read())
+                        {
+                            lista.Add(new Cliente2
+                            {
+                                Id = Convert.ToInt32(dr["Id"]),
+                                Nombre = dr["Nombre"].ToString(),
+                                Dui = dr["Dui"].ToString(),
+                                Telefono = dr["Telefono"].ToString(),
+                                Correo = dr["Correo"].ToString(),
+                                Estado = Convert.ToBoolean(dr["Estado"])
+                            });
+                        }
+                    }
+                }
+            }
+            return lista;
+        }
     }
 }
