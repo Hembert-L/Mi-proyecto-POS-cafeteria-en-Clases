@@ -25,5 +25,12 @@ namespace ProyectoPOS_1CA_A
             //muestro el formulario
             frm.ShowDialog();
         }
+
+        
+        private void btnClientes_Click_1(object sender, EventArgs e)
+        {
+            FrmClientes frm = new FrmClientes();
+            frm.ShowDialog();
+        }
     }
 }

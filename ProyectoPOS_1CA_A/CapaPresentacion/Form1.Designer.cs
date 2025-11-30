@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FrmMenuPrincipal));
             this.menuSuperior = new System.Windows.Forms.MenuStrip();
             this.gestiónToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.productosToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -225,8 +226,7 @@
             this.btnSalir.BackColor = System.Drawing.Color.Bisque;
             this.btnSalir.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnSalir.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnSalir.Image = global::ProyectoPOS_1CA_A.Properties.Resources.twitter_alt_circle_12107562;
-            this.btnSalir.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.btnSalir.Image = ((System.Drawing.Image)(resources.GetObject("btnSalir.Image")));
             this.btnSalir.Location = new System.Drawing.Point(10, 390);
             this.btnSalir.Margin = new System.Windows.Forms.Padding(3, 10, 3, 10);
             this.btnSalir.Name = "btnSalir";
@@ -241,8 +241,7 @@
             this.btnCorteCaja.BackColor = System.Drawing.Color.Bisque;
             this.btnCorteCaja.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnCorteCaja.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnCorteCaja.Image = global::ProyectoPOS_1CA_A.Properties.Resources.file_invoice_dollar_7928219__1_;
-            this.btnCorteCaja.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.btnCorteCaja.Image = ((System.Drawing.Image)(resources.GetObject("btnCorteCaja.Image")));
             this.btnCorteCaja.Location = new System.Drawing.Point(10, 315);
             this.btnCorteCaja.Margin = new System.Windows.Forms.Padding(3, 10, 3, 10);
             this.btnCorteCaja.Name = "btnCorteCaja";
@@ -257,8 +256,7 @@
             this.btnInventario.BackColor = System.Drawing.Color.Bisque;
             this.btnInventario.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnInventario.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnInventario.Image = global::ProyectoPOS_1CA_A.Properties.Resources.data_backup_19006204;
-            this.btnInventario.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.btnInventario.Image = ((System.Drawing.Image)(resources.GetObject("btnInventario.Image")));
             this.btnInventario.Location = new System.Drawing.Point(10, 240);
             this.btnInventario.Margin = new System.Windows.Forms.Padding(3, 10, 3, 10);
             this.btnInventario.Name = "btnInventario";
@@ -273,8 +271,7 @@
             this.btnClientes.BackColor = System.Drawing.Color.Bisque;
             this.btnClientes.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnClientes.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnClientes.Image = global::ProyectoPOS_1CA_A.Properties.Resources.user_3917711;
-            this.btnClientes.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.btnClientes.Image = ((System.Drawing.Image)(resources.GetObject("btnClientes.Image")));
             this.btnClientes.Location = new System.Drawing.Point(12, 164);
             this.btnClientes.Margin = new System.Windows.Forms.Padding(3, 10, 3, 10);
             this.btnClientes.Name = "btnClientes";
@@ -283,14 +280,14 @@
             this.btnClientes.Text = "Clientes";
             this.btnClientes.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.btnClientes.UseVisualStyleBackColor = false;
+            this.btnClientes.Click += new System.EventHandler(this.btnClientes_Click_1);
             // 
             // btnProductos
             // 
             this.btnProductos.BackColor = System.Drawing.Color.Bisque;
             this.btnProductos.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnProductos.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnProductos.Image = global::ProyectoPOS_1CA_A.Properties.Resources.store_alt_7653280;
-            this.btnProductos.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.btnProductos.Image = ((System.Drawing.Image)(resources.GetObject("btnProductos.Image")));
             this.btnProductos.Location = new System.Drawing.Point(12, 89);
             this.btnProductos.Margin = new System.Windows.Forms.Padding(3, 10, 3, 10);
             this.btnProductos.Name = "btnProductos";
@@ -306,8 +303,7 @@
             this.btnVentaRapida.BackColor = System.Drawing.Color.Bisque;
             this.btnVentaRapida.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnVentaRapida.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnVentaRapida.Image = global::ProyectoPOS_1CA_A.Properties.Resources.terms_check_17818045;
-            this.btnVentaRapida.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.btnVentaRapida.Image = ((System.Drawing.Image)(resources.GetObject("btnVentaRapida.Image")));
             this.btnVentaRapida.Location = new System.Drawing.Point(12, 14);
             this.btnVentaRapida.Margin = new System.Windows.Forms.Padding(3, 10, 3, 10);
             this.btnVentaRapida.Name = "btnVentaRapida";
