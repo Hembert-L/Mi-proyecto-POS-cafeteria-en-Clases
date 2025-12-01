@@ -201,10 +201,7 @@ namespace ProyectoPOS_1CA_A.CapaPresentacion
             RecalcularTotal();
         }
 
-        private void btnRegistrarVenta_Click(object sender, EventArgs e)
-        {
-            
-        }
+       
         private decimal ObtenerTotalVenta()
         {
             decimal total = 0;
@@ -258,19 +255,20 @@ namespace ProyectoPOS_1CA_A.CapaPresentacion
                         SubTotal = Convert.ToDecimal(row.Cells["SubTotal"].Value)
                     });
                 }
-                // --------------------------------------------------- 
-                // 3) VALIDAR EN BLL 
-                // --------------------------------------------------- 
                 var validacion = VentaBLL.ValidarVenta(venta, detalles);
+
+                // Si la validación falla → mostramos error y salimos
                 if (!validacion.Exito)
                 {
                     MessageBox.Show(validacion.Mensaje, "Error de validación", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                    return;
                 }
-                return;
-                // --------------------------------------------------- 
-                // 4) GUARDAR EN BASE DE DATOS (TRANSACCIÓN) 
-                // --------------------------------------------------- 
+
+                // ================================
+                // GUARDAR EN BASE DE DATOS (TRANSACCIÓN)
+                // ================================
                 var resultado = VentaDal.RegistrarVentaTransaccional(venta, detalles);
+
                 if (resultado.Exito)
                 {
                     MessageBox.Show(resultado.Mensaje, "Éxito", MessageBoxButtons.OK, MessageBoxIcon.Information);
@@ -281,6 +279,7 @@ namespace ProyectoPOS_1CA_A.CapaPresentacion
                     MessageBox.Show(resultado.Mensaje, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 }
             }
+
             catch (Exception ex)
             {
                 MessageBox.Show("Error inesperado: " + ex.Message);

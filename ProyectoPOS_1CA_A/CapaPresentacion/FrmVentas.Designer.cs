@@ -90,6 +90,7 @@
             // 
             // cboCliente
             // 
+            this.cboCliente.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cboCliente.Location = new System.Drawing.Point(80, 27);
             this.cboCliente.Name = "cboCliente";
             this.cboCliente.Size = new System.Drawing.Size(250, 21);
@@ -115,6 +116,8 @@
             // 
             // cboTipoPago
             // 
+            this.cboTipoPago.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cboTipoPago.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.cboTipoPago.Location = new System.Drawing.Point(550, 27);
             this.cboTipoPago.Name = "cboTipoPago";
             this.cboTipoPago.Size = new System.Drawing.Size(150, 21);
@@ -178,6 +181,7 @@
             // 
             // dgvProductos
             // 
+            this.dgvProductos.AllowUserToAddRows = false;
             this.dgvProductos.BackgroundColor = System.Drawing.Color.White;
             this.dgvProductos.Location = new System.Drawing.Point(15, 60);
             this.dgvProductos.Name = "dgvProductos";
@@ -211,6 +215,7 @@
             // 
             // dgvDetalles
             // 
+            this.dgvDetalles.AllowUserToAddRows = false;
             this.dgvDetalles.Location = new System.Drawing.Point(15, 30);
             this.dgvDetalles.Name = "dgvDetalles";
             this.dgvDetalles.Size = new System.Drawing.Size(450, 260);
