@@ -256,7 +256,13 @@ namespace ProyectoPOS_1CA_A.CapaPresentacion
                 this.Close();
             }
         }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            FrmCategoria frm = new FrmCategoria();
+            frm.ShowDialog();
+        }
     }
-    }
+}
 
 

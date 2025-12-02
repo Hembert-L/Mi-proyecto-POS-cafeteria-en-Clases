@@ -20,9 +20,9 @@ namespace ProyectoPOS_1CA_A.CapaDatos
                 {
                     // 1) INSERTAMOS VENTA Y RECUPERAMOS ID DE LA VENTA INGRESADA 
                     string sqlVenta = @" 
-INSERT INTO Venta (Fecha, MontoTotal, Id_TipoPago, Id_Cliente) 
-VALUES (@Fecha, @MontoTotal, @Id_TipoPago, @Id_Cliente); 
-SELECT SCOPE_IDENTITY();";
+                                      INSERT INTO Venta (Fecha, MontoTotal, Id_TipoPago, Id_Cliente) 
+                                      VALUES (@Fecha, @MontoTotal, @Id_TipoPago, @Id_Cliente); 
+                                      SELECT SCOPE_IDENTITY();";
                     using (SqlCommand cmd = new SqlCommand(sqlVenta, con, tx))
                     {
                         cmd.Parameters.AddWithValue("@Fecha", venta.Fecha);
@@ -34,8 +34,8 @@ SELECT SCOPE_IDENTITY();";
                     }
                     // 2) INSERTAMOS LOS DETALLES 
                     string sqlDetalle = @" 
-INSERT INTO DetalleVenta (Cantidad, PrecioUnitario, SubTotal, Id_Venta, Id_Producto) 
-VALUES (@Cantidad, @PrecioUnitario, @SubTotal, @Id_Venta, @Id_Producto);";
+                                     INSERT INTO DetalleVenta (Cantidad, PrecioUnitario, SubTotal, Id_Venta, Id_Producto) 
+                                     VALUES (@Cantidad, @PrecioUnitario, @SubTotal, @Id_Venta, @Id_Producto);";
                     // Acumular cantidades por producto (para descontar stock una sola vez) 
                     var acumulador = new Dictionary<int, int>();
                     foreach (var d in detalles)
@@ -57,9 +57,9 @@ VALUES (@Cantidad, @PrecioUnitario, @SubTotal, @Id_Venta, @Id_Producto);";
                     }
                     // 3) DESCONTAREMOS EL STOCK (validación interna) 
                     string sqlStock = @" 
-UPDATE Producto 
-SET Stock = Stock - @Cant 
-WHERE Id = @IdProducto AND Stock >= @Cant;";
+                                      UPDATE Producto 
+                                      SET Stock = Stock - @Cant 
+                                      WHERE Id = @IdProducto AND Stock >= @Cant;";
                     foreach (var item in acumulador)
                     {
                         using (SqlCommand cmdStock = new SqlCommand(sqlStock, con, tx))

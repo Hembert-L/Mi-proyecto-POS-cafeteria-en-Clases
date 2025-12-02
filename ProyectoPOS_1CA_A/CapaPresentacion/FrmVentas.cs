@@ -284,6 +284,10 @@ namespace ProyectoPOS_1CA_A.CapaPresentacion
             {
                 MessageBox.Show("Error inesperado: " + ex.Message);
             }
+
+            Form2 frm = new Form2();
+            frm.ShowDialog();
+
         }
 
         private void btnCancelar_Click_1(object sender, EventArgs e)

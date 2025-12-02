@@ -185,6 +185,7 @@
             this.dgvProductos.BackgroundColor = System.Drawing.Color.White;
             this.dgvProductos.Location = new System.Drawing.Point(15, 60);
             this.dgvProductos.Name = "dgvProductos";
+            this.dgvProductos.ReadOnly = true;
             this.dgvProductos.Size = new System.Drawing.Size(520, 230);
             this.dgvProductos.TabIndex = 3;
             this.dgvProductos.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvProductos_CellDoubleClick);
@@ -216,6 +217,8 @@
             // dgvDetalles
             // 
             this.dgvDetalles.AllowUserToAddRows = false;
+            this.dgvDetalles.BackgroundColor = System.Drawing.Color.White;
+            this.dgvDetalles.GridColor = System.Drawing.Color.White;
             this.dgvDetalles.Location = new System.Drawing.Point(15, 30);
             this.dgvDetalles.Name = "dgvDetalles";
             this.dgvDetalles.Size = new System.Drawing.Size(450, 260);
