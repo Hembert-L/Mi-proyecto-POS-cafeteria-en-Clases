@@ -115,6 +115,18 @@ namespace ProyectoPOS_1CA_A.CapaPresentacion
             CargarUsuarios();
 
         }
+
+        private void dgvUsuarios_CellClick(object sender, DataGridViewCellEventArgs e)
+        {
+            if (e.RowIndex >= 0)
+            {
+                txtId.Text = dgvUsuarios.Rows[e.RowIndex].Cells["IdUsuario"].Value.ToString();
+                txtNombreUsuario.Text = dgvUsuarios.Rows[e.RowIndex].Cells["NombreUsuario"].Value.ToString();
+                cmbRol.Text = dgvUsuarios.Rows[e.RowIndex].Cells["Rol"].Value.ToString();
+                chkEstado.Checked = dgvUsuarios.Rows[e.RowIndex].Cells["Estado"].Value.ToString() == "Activo";
+            }
+
+        }
     }
 }
 
