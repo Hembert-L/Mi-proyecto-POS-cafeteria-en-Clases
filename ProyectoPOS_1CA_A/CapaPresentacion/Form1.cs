@@ -98,5 +98,11 @@ namespace ProyectoPOS_1CA_A
             frm.ShowDialog();
 
         }
+
+        private void btnReportes_Click(object sender, EventArgs e)
+        {
+            FrmReportes frm = new FrmReportes();
+            frm.ShowDialog();
+        }
     }
 }

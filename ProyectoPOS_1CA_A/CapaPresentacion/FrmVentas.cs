@@ -294,6 +294,11 @@ namespace ProyectoPOS_1CA_A.CapaPresentacion
         {
             this.Close();
         }
+
+        private void dgvProductos_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+
+        }
     }
        
     

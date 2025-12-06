@@ -48,18 +48,19 @@
             this.productoMasVendidoToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.cierreDeCajaToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.saliirToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.panelIzquierdo = new System.Windows.Forms.Panel();
-            this.panelCentral = new System.Windows.Forms.Panel();
-            this.btnUsuario = new System.Windows.Forms.Button();
-            this.lblUsuario = new System.Windows.Forms.Label();
             this.cambiarClaveToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.logoPOS = new System.Windows.Forms.PictureBox();
+            this.panelIzquierdo = new System.Windows.Forms.Panel();
+            this.btnUsuario = new System.Windows.Forms.Button();
             this.btnSalir = new System.Windows.Forms.Button();
             this.btnCorteCaja = new System.Windows.Forms.Button();
             this.btnInventario = new System.Windows.Forms.Button();
             this.btnClientes = new System.Windows.Forms.Button();
             this.btnProductos = new System.Windows.Forms.Button();
             this.btnVentaRapida = new System.Windows.Forms.Button();
+            this.panelCentral = new System.Windows.Forms.Panel();
+            this.lblUsuario = new System.Windows.Forms.Label();
+            this.logoPOS = new System.Windows.Forms.PictureBox();
+            this.btnReportes = new System.Windows.Forms.Button();
             this.menuSuperior.SuspendLayout();
             this.panelIzquierdo.SuspendLayout();
             this.panelCentral.SuspendLayout();
@@ -210,9 +211,17 @@
             this.saliirToolStripMenuItem.Size = new System.Drawing.Size(49, 23);
             this.saliirToolStripMenuItem.Text = "Saliir";
             // 
+            // cambiarClaveToolStripMenuItem
+            // 
+            this.cambiarClaveToolStripMenuItem.Name = "cambiarClaveToolStripMenuItem";
+            this.cambiarClaveToolStripMenuItem.Size = new System.Drawing.Size(109, 23);
+            this.cambiarClaveToolStripMenuItem.Text = "Cambiar Clave";
+            this.cambiarClaveToolStripMenuItem.Click += new System.EventHandler(this.cambiarClaveToolStripMenuItem_Click);
+            // 
             // panelIzquierdo
             // 
             this.panelIzquierdo.BackColor = System.Drawing.Color.SaddleBrown;
+            this.panelIzquierdo.Controls.Add(this.btnReportes);
             this.panelIzquierdo.Controls.Add(this.btnUsuario);
             this.panelIzquierdo.Controls.Add(this.btnSalir);
             this.panelIzquierdo.Controls.Add(this.btnCorteCaja);
@@ -225,16 +234,6 @@
             this.panelIzquierdo.Name = "panelIzquierdo";
             this.panelIzquierdo.Size = new System.Drawing.Size(200, 534);
             this.panelIzquierdo.TabIndex = 1;
-            // 
-            // panelCentral
-            // 
-            this.panelCentral.Controls.Add(this.lblUsuario);
-            this.panelCentral.Controls.Add(this.logoPOS);
-            this.panelCentral.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.panelCentral.Location = new System.Drawing.Point(200, 27);
-            this.panelCentral.Name = "panelCentral";
-            this.panelCentral.Size = new System.Drawing.Size(584, 534);
-            this.panelCentral.TabIndex = 2;
             // 
             // btnUsuario
             // 
@@ -251,40 +250,13 @@
             this.btnUsuario.UseVisualStyleBackColor = false;
             this.btnUsuario.Click += new System.EventHandler(this.btnUsuario_Click);
             // 
-            // lblUsuario
-            // 
-            this.lblUsuario.AutoSize = true;
-            this.lblUsuario.Location = new System.Drawing.Point(426, 14);
-            this.lblUsuario.Name = "lblUsuario";
-            this.lblUsuario.Size = new System.Drawing.Size(35, 13);
-            this.lblUsuario.TabIndex = 1;
-            this.lblUsuario.Text = "label1";
-            this.lblUsuario.Click += new System.EventHandler(this.lblUsuario_Click);
-            // 
-            // cambiarClaveToolStripMenuItem
-            // 
-            this.cambiarClaveToolStripMenuItem.Name = "cambiarClaveToolStripMenuItem";
-            this.cambiarClaveToolStripMenuItem.Size = new System.Drawing.Size(109, 23);
-            this.cambiarClaveToolStripMenuItem.Text = "Cambiar Clave";
-            this.cambiarClaveToolStripMenuItem.Click += new System.EventHandler(this.cambiarClaveToolStripMenuItem_Click);
-            // 
-            // logoPOS
-            // 
-            this.logoPOS.Image = global::ProyectoPOS_1CA_A.Properties.Resources.Gemini_Generated_Image_u3u1r0u3u1r0u3u1;
-            this.logoPOS.Location = new System.Drawing.Point(17, 46);
-            this.logoPOS.Name = "logoPOS";
-            this.logoPOS.Size = new System.Drawing.Size(555, 383);
-            this.logoPOS.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.logoPOS.TabIndex = 0;
-            this.logoPOS.TabStop = false;
-            // 
             // btnSalir
             // 
             this.btnSalir.BackColor = System.Drawing.Color.Bisque;
             this.btnSalir.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnSalir.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnSalir.Image = ((System.Drawing.Image)(resources.GetObject("btnSalir.Image")));
-            this.btnSalir.Location = new System.Drawing.Point(10, 385);
+            this.btnSalir.Location = new System.Drawing.Point(10, 440);
             this.btnSalir.Margin = new System.Windows.Forms.Padding(3, 10, 3, 10);
             this.btnSalir.Name = "btnSalir";
             this.btnSalir.Size = new System.Drawing.Size(180, 42);
@@ -373,6 +345,51 @@
             this.btnVentaRapida.UseVisualStyleBackColor = false;
             this.btnVentaRapida.Click += new System.EventHandler(this.btnVentaRapida_Click);
             // 
+            // panelCentral
+            // 
+            this.panelCentral.Controls.Add(this.lblUsuario);
+            this.panelCentral.Controls.Add(this.logoPOS);
+            this.panelCentral.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.panelCentral.Location = new System.Drawing.Point(200, 27);
+            this.panelCentral.Name = "panelCentral";
+            this.panelCentral.Size = new System.Drawing.Size(584, 534);
+            this.panelCentral.TabIndex = 2;
+            // 
+            // lblUsuario
+            // 
+            this.lblUsuario.AutoSize = true;
+            this.lblUsuario.Location = new System.Drawing.Point(426, 14);
+            this.lblUsuario.Name = "lblUsuario";
+            this.lblUsuario.Size = new System.Drawing.Size(35, 13);
+            this.lblUsuario.TabIndex = 1;
+            this.lblUsuario.Text = "label1";
+            this.lblUsuario.Click += new System.EventHandler(this.lblUsuario_Click);
+            // 
+            // logoPOS
+            // 
+            this.logoPOS.Image = global::ProyectoPOS_1CA_A.Properties.Resources.Gemini_Generated_Image_u3u1r0u3u1r0u3u1;
+            this.logoPOS.Location = new System.Drawing.Point(17, 46);
+            this.logoPOS.Name = "logoPOS";
+            this.logoPOS.Size = new System.Drawing.Size(555, 383);
+            this.logoPOS.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.logoPOS.TabIndex = 0;
+            this.logoPOS.TabStop = false;
+            // 
+            // btnReportes
+            // 
+            this.btnReportes.BackColor = System.Drawing.Color.Bisque;
+            this.btnReportes.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnReportes.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnReportes.Location = new System.Drawing.Point(10, 378);
+            this.btnReportes.Margin = new System.Windows.Forms.Padding(3, 10, 3, 10);
+            this.btnReportes.Name = "btnReportes";
+            this.btnReportes.Size = new System.Drawing.Size(180, 42);
+            this.btnReportes.TabIndex = 7;
+            this.btnReportes.Text = "REPORTES";
+            this.btnReportes.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.btnReportes.UseVisualStyleBackColor = false;
+            this.btnReportes.Click += new System.EventHandler(this.btnReportes_Click);
+            // 
             // FrmMenuPrincipal
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -432,6 +449,7 @@
         private System.Windows.Forms.Button btnUsuario;
         private System.Windows.Forms.Label lblUsuario;
         private System.Windows.Forms.ToolStripMenuItem cambiarClaveToolStripMenuItem;
+        private System.Windows.Forms.Button btnReportes;
     }
 }
 

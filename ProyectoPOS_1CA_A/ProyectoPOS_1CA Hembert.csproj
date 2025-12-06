@@ -12,6 +12,8 @@
     <FileAlignment>512</FileAlignment>
     <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
     <Deterministic>true</Deterministic>
+    <NuGetPackageImportStamp>
+    </NuGetPackageImportStamp>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <PlatformTarget>AnyCPU</PlatformTarget>
@@ -39,8 +41,15 @@
     <Reference Include="itextsharp, Version=5.5.13.4, Culture=neutral, PublicKeyToken=8354ae6d2174ddca, processorArchitecture=MSIL">
       <HintPath>..\packages\iTextSharp.5.5.13.4\lib\net461\itextsharp.dll</HintPath>
     </Reference>
+    <Reference Include="QuestPDF, Version=2025.7.4.0, Culture=neutral, PublicKeyToken=0f3c2b2315ff52c8, processorArchitecture=MSIL">
+      <HintPath>..\packages\QuestPDF.2025.7.4\lib\netstandard2.0\QuestPDF.dll</HintPath>
+    </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core" />
+    <Reference Include="System.Numerics" />
+    <Reference Include="System.Numerics.Vectors, Version=4.1.4.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Numerics.Vectors.4.5.0\lib\net46\System.Numerics.Vectors.dll</HintPath>
+    </Reference>
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
     <Reference Include="Microsoft.CSharp" />
@@ -53,8 +62,12 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="CapaDatos\CategoriaDAL.cs" />
+    <Compile Include="CapaDatos\ReporteDAL.cs" />
     <Compile Include="CapaDatos\UsuarioDAL.cs" />
     <Compile Include="CapaDatos\VentaDal.cs" />
+    <Compile Include="CapaEntidades\Reportes\ReporteVentasDocumento.cs" />
+    <Compile Include="CapaEntidades\Reportes\ReporteVentasModel.cs" />
+    <Compile Include="CapaEntidades\Reportes\ReporteVentasPDF.cs" />
     <Compile Include="CapaEntidades\Seguridad.cs" />
     <Compile Include="CapaEntidades\SesionActual.cs" />
     <Compile Include="CapaEntidades\Usuario.cs" />
@@ -72,6 +85,7 @@
     <Compile Include="CapaEntidades\Validaciones.cs" />
     <Compile Include="CapaEntidades\Venta.cs" />
     <Compile Include="CapaNegocio\ClienteBLL.cs" />
+    <Compile Include="CapaNegocio\ReporteBLL.cs" />
     <Compile Include="CapaNegocio\UsuarioBLL.cs" />
     <Compile Include="CapaNegocio\VentaBLL.cs" />
     <Compile Include="CapaPresentacion\Form1.cs">
@@ -134,6 +148,12 @@
     <Compile Include="CapaPresentacion\FrmProductos.Designer.cs">
       <DependentUpon>FrmProductos.cs</DependentUpon>
     </Compile>
+    <Compile Include="CapaPresentacion\FrmReportes.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="CapaPresentacion\FrmReportes.Designer.cs">
+      <DependentUpon>FrmReportes.cs</DependentUpon>
+    </Compile>
     <Compile Include="CapaPresentacion\FrmUsuarios.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -177,6 +197,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="CapaPresentacion\FrmProductos.resx">
       <DependentUpon>FrmProductos.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="CapaPresentacion\FrmReportes.resx">
+      <DependentUpon>FrmReportes.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="CapaPresentacion\FrmUsuarios.resx">
       <DependentUpon>FrmUsuarios.cs</DependentUpon>
@@ -236,4 +259,11 @@
     <None Include="Resources\user_3917711.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <Import Project="..\packages\QuestPDF.2025.7.4\build\net4\QuestPDF.targets" Condition="Exists('..\packages\QuestPDF.2025.7.4\build\net4\QuestPDF.targets')" />
+  <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
+    <PropertyGroup>
+      <ErrorText>Este proyecto hace referencia a los paquetes NuGet que faltan en este equipo. Use la restauración de paquetes NuGet para descargarlos. Para obtener más información, consulte http://go.microsoft.com/fwlink/?LinkID=322105. El archivo que falta es {0}.</ErrorText>
+    </PropertyGroup>
+    <Error Condition="!Exists('..\packages\QuestPDF.2025.7.4\build\net4\QuestPDF.targets')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\QuestPDF.2025.7.4\build\net4\QuestPDF.targets'))" />
+  </Target>
 </Project>

@@ -188,6 +188,7 @@
             this.dgvProductos.ReadOnly = true;
             this.dgvProductos.Size = new System.Drawing.Size(520, 230);
             this.dgvProductos.TabIndex = 3;
+            this.dgvProductos.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvProductos_CellContentClick);
             this.dgvProductos.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvProductos_CellDoubleClick);
             // 
             // btnAgregarProducto
